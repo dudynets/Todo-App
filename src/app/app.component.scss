@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 3rem;
+    z-index: 2;
+
+    h1 {
+        margin-bottom: 1rem;
+
+        i {
+            margin-right: .5rem;
+            color: #118AE2;
+        }
+    }
+
+    .loading {
+        margin-top: 1rem;
+        font-weight: bold;
+    }
+}

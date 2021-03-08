@@ -1,0 +1,29 @@
+<div class="filter">
+    <i class="fas fa-search"></i>
+    <input
+        type="text"
+        placeholder="Search"
+        [(ngModel)]="searchString"
+    >
+</div>
+
+<hr noshade size="1px" color="#ccc">
+
+<ul *ngIf="todosService.todos.length; else noTodos">
+        <li *ngFor="let todo of todosService.todos | todosFilter:searchString; let i = index">
+                <span [class.done]="todo.completed">
+                    <input type="checkbox" id="completed" [checked]="todo.completed" (change)="onChange(todo.id)">
+                    <strong>{{ i + 1 }}.</strong> {{ todo.title }}
+                </span>
+
+                <small>{{ todo.date | date:'MMM d, y | hh:mm:ss' }}</small>
+
+                <button class="rm" (click)="removeTodo(todo.id)"><i class="fas fa-times"></i></button>
+        </li>
+</ul>
+
+<ng-template #noTodos>
+    <p class="noTodos">
+        All done!
+    </p>
+</ng-template>

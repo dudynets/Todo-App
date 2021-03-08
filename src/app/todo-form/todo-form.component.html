@@ -1,0 +1,13 @@
+<div class="component">
+    <div>
+        <i class="fas fa-arrow-right"></i>
+        <input
+            type="text"
+            placeholder="Add Todo..."
+            [(ngModel)]="title"
+            (keyDown.enter)="addTodo()"
+        >
+    </div>
+
+    <button (click)="addTodo()"><i class="fas fa-plus-square"></i><span>Add Todo</span></button>
+</div>
